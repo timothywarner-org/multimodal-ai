@@ -32,25 +32,25 @@ in the cloud. This summary outlines key principles and strategies.
 
 ## AI Adoption Roadmap (6-18 Months)
 
-**Phase 1: Foundation (Months 1-3)**
+### Phase 1: Foundation (Months 1-3)
 
 * Establish data governance and quality processes.
 * Build internal AI literacy and skills.
 * Identify high-impact AI use cases.
 
-**Phase 2: Experimentation (Months 4-6)**
+### Phase 2: Experimentation (Months 4-6)
 
 * Develop proof-of-concepts for prioritized use cases.
 * Test data pipelines and model training workflows.
 * Gather stakeholder feedback and refine approach.
 
-**Phase 3: Scaling (Months 7-12)**
+### Phase 3: Scaling (Months 7-12)
 
 * Deploy AI solutions to production with MLOps.
 * Implement monitoring, logging, and governance.
 * Train business users on AI tool utilization.
 
-**Phase 4: Optimization (Months 13-18)**
+### Phase 4: Optimization (Months 13-18)
 
 * Optimize models based on production performance.
 * Expand AI to additional use cases.

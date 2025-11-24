@@ -10,13 +10,13 @@ pipeline name, repo, or cloud target.
 
 ## Task prompts
 
-* Pipeline fix: "Diagnose why <pipeline-name> fails on step <step>. Suggest the smallest YAML change
+* Pipeline fix: "Diagnose why `pipeline-name` fails on step `step`. Suggest the smallest YAML change
   and a smoke test."
-* Rollout plan: "Create a canary rollout for service <name> in <cloud>. Include traffic ramps, health
+* Rollout plan: "Create a canary rollout for service `name` in `cloud`. Include traffic ramps, health
   checks, and rollback triggers."
-* IaC review: "Review this Terraform snippet <paste>. Flag drift risks, state issues, and missing
+* IaC review: "Review this Terraform snippet `paste`. Flag drift risks, state issues, and missing
   tagging. Provide a patched block."
-* SLO drill: "Draft SLOs for <service>. Propose SLIs, targets, and error budgets with monitoring
+* SLO drill: "Draft SLOs for `service`. Propose SLIs, targets, and error budgets with monitoring
   queries (PromQL or Kusto)."
 
 ## Follow-ups

@@ -1,19 +1,13 @@
 {
 	"servers": {
-		"microsoftdocs/mcp": {
-			"type": "http",
-			"url": "https://learn.microsoft.com/api/mcp",
-			"gallery": "https://api.mcp.github.com",
-			"version": "1.0.0"
-		},
-		"io.github.github/github-mcp-server": {
-			"type": "http",
+		"github": {
 			"url": "https://api.githubcopilot.com/mcp/",
 			"headers": {
 				"Authorization": "${input:Authorization}"
-			},
-			"gallery": "https://api.mcp.github.com",
-			"version": "0.23.0-gosdk"
+			}
+		},
+		"microsoft-learn": {
+			"url": "https://learn.microsoft.com/api/mcp"
 		}
 	},
 	"inputs": [

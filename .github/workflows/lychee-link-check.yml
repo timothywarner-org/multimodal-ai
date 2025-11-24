@@ -1,38 +1,69 @@
 name: Lychee Link Checker
 
 on:
+  # push:
+  #   branches:
+  #     - main
+  #     - "release/*"
+  # pull_request:
+  #   branches:
+  #     - main
+  #     - "release/*"
   workflow_dispatch:
 
 jobs:
-  link-check:
+  lychee:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
 
     steps:
+      # Checkout code
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Restore Lychee Cache
+      # Compute cache key from all .md files (churn detection)
+      - name: Generate cache key for Lychee
+        id: mdhash
+        run: |
+          echo "hash=$(find . -name '*.md' -type f -exec sha256sum {} + | \
+            sort | sha256sum | cut -d ' ' -f1)" >> $GITHUB_OUTPUT
+
+      # Restore Lychee cache if available
+      - name: Restore Lychee URL Cache
         uses: actions/cache@v4
         with:
           path: .lychee-cache
-          key: cache-lychee-${{ github.sha }}
-          restore-keys: cache-lychee-
+          key: lychee-cache-${{ steps.mdhash.outputs.hash }}
+          restore-keys: |
+            lychee-cache-
 
-      - name: Run Lychee link checker
-        uses: lycheeverse/lychee-action@v2.7.0
-        with:
-          args: "--recursive --exclude-mail --timeout 10 --cache .lychee-cache --max-cache-age 7 --format json"
-          output: lychee-report.md
+      # Install Lychee CLI (pin version; update if you want a newer release)
+      - name: Install Lychee
+        run: |
+          curl -sSL https://github.com/lycheeverse/lychee/releases/\
+            download/v0.14.2/lychee-v0.14.2-x86_64-unknown-linux-gnu.tar.gz \
+            | tar xz
+          sudo mv lychee /usr/local/bin/
 
-      - name: Save Lychee Cache
-        if: always()
-        uses: actions/cache@v4
-        with:
-          path: .lychee-cache
-          key: cache-lychee-${{ github.sha }}
+      # Run Lychee on all Markdown files recursively, using cache
+      - name: Scan Markdown files for broken links with Lychee
+        run: |
+          lychee --cache .lychee-cache --max-cache-age 7d \
+            --format markdown **/*.md > lychee-report.md
 
-      - name: Upload Lychee Report
+      # Upload Lychee findings as a workflow artifact for review
+      - name: Upload Lychee report
         uses: actions/upload-artifact@v4
         with:
           name: lychee-report
           path: lychee-report.md
+
+      # Fail build if broken links are found
+      - name: Fail on broken links
+        run: |
+          if grep -q '✗' lychee-report.md; then
+            echo "::error::Broken links detected. See lychee-report.md for details."
+            exit 1
+          fi
