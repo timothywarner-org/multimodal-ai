@@ -1,0 +1,32 @@
+name: Markdown Linter
+
+on:
+  workflow_dispatch:
+
+jobs:
+  lint-markdown:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install Markdownlint CLI
+        run: npm install -g markdownlint-cli2
+
+      - name: Run Markdown Linter
+        run: markdownlint-cli2 "**/*.md" --config .markdownlint.json --fix
+
+      - name: Commit Changes
+        if: success()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: fix markdown lint violations"
+          git push
