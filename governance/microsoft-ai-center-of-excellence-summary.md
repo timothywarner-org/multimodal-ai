@@ -11,25 +11,25 @@ implementing AI solutions. This summary highlights its key offerings and benefit
    * Azure AI Engineer Associate (AI-102)
    * Specialized AI certifications (Computer Vision, Language Understanding)
 
-2. **Best Practices**: Guidelines for designing and deploying AI solutions.
+1. **Best Practices**: Guidelines for designing and deploying AI solutions.
    * Architecture patterns and reference solutions
    * Responsible AI playbooks
    * Data science best practices
    * MLOps implementation guides
 
-3. **Community Support**: Collaboration opportunities with AI experts and peers.
+1. **Community Support**: Collaboration opportunities with AI experts and peers.
    * AI Community Exchange forums
    * Monthly webinars and expert sessions
    * Networking opportunities with other organizations
    * Access to Microsoft AI partner network
 
-4. **Tools and Resources**: Access to Azure AI tools and templates.
+1. **Tools and Resources**: Access to Azure AI tools and templates.
    * Pre-built AI accelerators and templates
    * Reference architectures for common scenarios
    * Responsible AI dashboard and tools
    * MLOps starter kits
 
-5. **Innovation Programs**: Support for exploring and prototyping new AI ideas.
+1. **Innovation Programs**: Support for exploring and prototyping new AI ideas.
    * Innovation workshop programs
    * Access to emerging AI technologies (GPT-4, etc.)
    * Fast-track prototyping support
@@ -77,18 +77,18 @@ Organizations leveraging Microsoft AI CoE have achieved:
 ## Getting Started
 
 1. Enroll in Microsoft Learn AI Fundamentals.
-2. Join the AI Community Exchange for peer support.
-3. Explore Azure AI reference architectures for your use case.
-4. Attend monthly webinars and expert sessions.
-5. Consider specialized training based on your AI initiatives.
+1. Join the AI Community Exchange for peer support.
+1. Explore Azure AI reference architectures for your use case.
+1. Attend monthly webinars and expert sessions.
+1. Consider specialized training based on your AI initiatives.
 
 ## Resources
 
 * [Microsoft AI Center of Excellence]
-(https://www.microsoft.com/en-us/ai/ai-center-of-excellence)
+(<https://www.microsoft.com/en-us/ai/ai-center-of-excellence>)
 * [Microsoft Learn AI Modules]
-(https://learn.microsoft.com/en-us/training/browse/?expanded=azure&levels=beginner&roles=ai-engineer)
+(<https://learn.microsoft.com/en-us/training/browse/?expanded=azure&levels=beginner&roles=ai-engineer>)
 * [Azure AI Services]
-(https://learn.microsoft.com/en-us/azure/ai-services/)
+(<https://learn.microsoft.com/en-us/azure/ai-services/>)
 * [Responsible AI Resources]
-(https://www.microsoft.com/en-us/ai/responsible-ai)
+(<https://www.microsoft.com/en-us/ai/responsible-ai>)

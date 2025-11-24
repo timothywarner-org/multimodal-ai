@@ -10,22 +10,22 @@ in the cloud. This summary outlines key principles and strategies.
    * Establish clear KPIs and success metrics.
    * Link AI initiatives to revenue, cost reduction, or risk mitigation.
 
-2. **Adopt a Data-Driven Culture**: Foster data literacy and governance.
+1. **Adopt a Data-Driven Culture**: Foster data literacy and governance.
    * Invest in data engineering and quality foundational work.
    * Build cross-functional data teams.
    * Implement data governance frameworks early.
 
-3. **Ensure Responsible AI**: Implement ethical AI practices.
+1. **Ensure Responsible AI**: Implement ethical AI practices.
    * Embed responsible AI principles in model development.
    * Conduct fairness and bias assessments.
    * Maintain audit trails for compliance.
 
-4. **Optimize for Scalability**: Design solutions that can grow with demand.
+1. **Optimize for Scalability**: Design solutions that can grow with demand.
    * Use Azure Synapse for large-scale data processing.
    * Implement containerization and orchestration with Kubernetes.
    * Plan for elasticity and performance optimization.
 
-5. **Leverage Cloud-Native Services**: Use Azure AI and machine learning tools.
+1. **Leverage Cloud-Native Services**: Use Azure AI and machine learning tools.
    * Use Azure Machine Learning for end-to-end ML workflows.
    * Leverage pre-built AI services (Computer Vision, Language Understanding).
    * Implement MLOps for continuous model improvement.
@@ -69,9 +69,9 @@ models.
 ### Evaluation Framework
 
 1. Establish baseline metrics before AI deployment.
-2. Measure incrementally as each phase completes.
-3. Conduct quarterly reviews with stakeholders.
-4. Adjust strategy based on results and emerging opportunities.
+1. Measure incrementally as each phase completes.
+1. Conduct quarterly reviews with stakeholders.
+1. Adjust strategy based on results and emerging opportunities.
 
 ## Implementation Strategies
 
@@ -85,8 +85,8 @@ models.
 ## Resources
 
 * [Cloud Adoption Framework]
-(https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/)
+(<https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/>)
 * [Azure AI Services]
-(https://learn.microsoft.com/en-us/azure/ai-services/)
+(<https://learn.microsoft.com/en-us/azure/ai-services/>)
 * [Azure Machine Learning Documentation]
-(https://learn.microsoft.com/en-us/azure/machine-learning/)
+(<https://learn.microsoft.com/en-us/azure/machine-learning/>)

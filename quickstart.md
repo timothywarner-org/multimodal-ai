@@ -13,19 +13,20 @@ Get up and running with a real, working agent in 10 minutes. No theory—just ex
 ## The Scenario
 
 You're a project manager. You need an agent that:
+
 1. Takes a project screenshot
-2. Extracts action items from the image
-3. Formats them as a checklist
+1. Extracts action items from the image
+1. Formats them as a checklist
 
 **Time**: 10 minutes end-to-end.
 
 ## Step 1: Open Microsoft Copilot Studio (1 minute)
 
 1. Go to [copilot.microsoft.com](https://copilot.microsoft.com)
-2. Click **"Create"** → **"New Agent"**
-3. Name it: **"Project Action Extractor"**
-4. Description: *"Analyzes project images and extracts action items"*
-5. Click **Create**
+1. Click **"Create"** → **"New Agent"**
+1. Name it: **"Project Action Extractor"**
+1. Description: *"Analyzes project images and extracts action items"*
+1. Click **Create**
 
 ## Step 2: Add Your First Instruction (2 minutes)
 
@@ -48,19 +49,20 @@ Copy and paste this. Click **Save**.
 ## Step 3: Enable Image Understanding (1 minute)
 
 1. Go to **Settings** → **Features**
-2. Toggle **"Vision/Image Input"** to **On**
-3. Under **Input Modalities**, ensure **Image** is checked
-4. Save
+1. Toggle **"Vision/Image Input"** to **On**
+1. Under **Input Modalities**, ensure **Image** is checked
+1. Save
 
 ## Step 4: Test It (4 minutes)
 
 1. Click **Test Agent** (bottom right)
-2. In the test panel, upload an image or screenshot (or use this example):
+1. In the test panel, upload an image or screenshot (or use this example):
    * Try a screenshot of a spreadsheet, to-do list, or whiteboard photo
    * Or describe an image: *"I have a screenshot of my sprint board with three columns: To Do, In Progress, Done"*
-3. The agent should respond with an extracted checklist
+1. The agent should respond with an extracted checklist
 
 **Example output:**
+
 ```
 📋 Action Items from Sprint Board
 
@@ -76,13 +78,13 @@ Copy and paste this. Click **Save**.
 Want to share it with your team?
 
 1. Click **Publish** (top right)
-2. Select **Microsoft Teams**
-3. Add to your team channel
-4. Team members can now use it directly in Teams
+1. Select **Microsoft Teams**
+1. Add to your team channel
+1. Team members can now use it directly in Teams
 
 ---
 
-## What Just Happened?
+## What Just Happened
 
 ✅ You created an agent that understands **both text and images**
 ✅ You gave it **specific instructions** for a real workflow
@@ -99,20 +101,20 @@ Want to share it with your team?
 * **Add governance**: Review [governance/responsible-ai.md](governance/responsible-ai.md) before sharing with your org
 * **Troubleshooting**: If the agent doesn't recognize images, see [TROUBLESHOOTING.md](troubleshooting.md) (coming soon)
 
-## Stuck?
+## Stuck
 
 **Agent returns gibberish**:
-- Try clearer instructions: *"Return ONLY a numbered list"*
-- Test with a simpler image first
+* Try clearer instructions: *"Return ONLY a numbered list"*
+* Test with a simpler image first
 
 **Image won't upload**:
-- Check file size (<10 MB)
-- Try JPG or PNG format
-- Ensure image has clear text or visuals
+* Check file size (<10 MB)
+* Try JPG or PNG format
+* Ensure image has clear text or visuals
 
 **Want to customize more**:
-- [View the full M365 Copilot tutorial](tutorials/m365-agent-tutorial.md)
-- [Explore agentic AI guardrails](governance/agentic-ai-guardrails.md)
+* [View the full M365 Copilot tutorial](tutorials/m365-agent-tutorial.md)
+* [Explore agentic AI guardrails](governance/agentic-ai-guardrails.md)
 
 ---
 

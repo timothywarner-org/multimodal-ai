@@ -11,22 +11,22 @@ principles and recommendations.
    * Use connection references and managed environments.
    * Test for graceful degradation under failure conditions.
 
-2. **Security**: Protect data and ensure compliance with regulations.
+1. **Security**: Protect data and ensure compliance with regulations.
    * Implement role-based access control (RBAC) with column-level security.
    * Use environment variables for sensitive configuration data.
    * Enable data loss prevention (DLP) policies.
 
-3. **Performance Efficiency**: Optimize resource usage and system performance.
+1. **Performance Efficiency**: Optimize resource usage and system performance.
    * Use power queries to filter data at the source.
    * Avoid circular dependencies in model-driven apps.
    * Monitor canvas app performance with app insights.
 
-4. **Operational Excellence**: Streamline operations and improve maintainability.
+1. **Operational Excellence**: Streamline operations and improve maintainability.
    * Use managed solutions for version control and lifecycle management.
    * Document configuration and customizations thoroughly.
    * Implement governance policies and naming conventions.
 
-5. **Experience Optimization**: Create seamless, intuitive, and meaningful user experiences.
+1. **Experience Optimization**: Create seamless, intuitive, and meaningful user experiences.
    * Design conversational user interfaces and interactions.
    * Focus on usability and relevance of solutions.
    * Implement accessibility features for all users.
@@ -78,6 +78,6 @@ authentication. Regularly audit connector usage.
 ## Resources
 
 * [Power Platform Well-Architected Framework]
-(https://learn.microsoft.com/en-us/power-platform/guidance/well-architected-framework)
+(<https://learn.microsoft.com/en-us/power-platform/guidance/well-architected-framework>)
 * [Power Platform Center of Excellence Starter Kit]
-(https://learn.microsoft.com/en-us/power-platform/guidance/coe/starter-kit-intro)
+(<https://learn.microsoft.com/en-us/power-platform/guidance/coe/starter-kit-intro>)

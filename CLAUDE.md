@@ -71,10 +71,10 @@ All Markdown files must follow `.markdownlint.json` rules:
 When adding new tutorials or documentation:
 
 1. Create files in `tutorials/` directory with descriptive names
-2. Ensure content adheres to Markdown linting rules
-3. All external links should be valid (will be checked by Lychee)
-4. Follow conventional commit messages (e.g., `docs: add copilot tutorial`)
-5. Test Markdown locally before committing
+1. Ensure content adheres to Markdown linting rules
+1. All external links should be valid (will be checked by Lychee)
+1. Follow conventional commit messages (e.g., `docs: add copilot tutorial`)
+1. Test Markdown locally before committing
 
 ## Session Context
 

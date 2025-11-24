@@ -11,16 +11,16 @@ missing.
 ## Task prompts
 
 * Threat model: "Create a quick threat model for <app/component>. Use STRIDE, list top risks, and
-  propose mitigations with owner and effort." 
+  propose mitigations with owner and effort."
 * Hardening: "List hardened defaults for <platform> (e.g., AKS, Windows, Linux). Include config keys
-  and recommended values." 
+  and recommended values."
 * Incident triage: "Given these IoCs <paste>, outline containment, eradication, and recovery steps
-  with evidence to collect." 
+  with evidence to collect."
 * Detection: "Write a detection rule idea for <attack> in <SIEM>. Include logic (KQL/Splunk) and
-  tuning tips." 
+  tuning tips."
 
 ## Follow-ups
 
-* "Map this to CIS controls and note gaps." 
-* "Add commands to validate the hardening settings." 
-* "Shorten the incident steps into a 30-minute containment plan." 
+* "Map this to CIS controls and note gaps."
+* "Add commands to validate the hardening settings."
+* "Shorten the incident steps into a 30-minute containment plan."

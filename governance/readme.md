@@ -40,22 +40,22 @@ support available through Microsoft's AI Center of Excellence.
 
 1. **Understand Principles**: Start with [Responsible AI](./responsible-ai.md) to
 establish a foundation.
-2. **Define Governance**: Use [Agentic AI Guardrails](./agentic-ai-guardrails.md) to
+1. **Define Governance**: Use [Agentic AI Guardrails](./agentic-ai-guardrails.md) to
 define decision-making boundaries.
-3. **Choose Your Platform**: Reference the appropriate framework based on your
+1. **Choose Your Platform**: Reference the appropriate framework based on your
 technology stack.
-4. **Plan Adoption**: Follow the [Cloud Adoption Framework]
+1. **Plan Adoption**: Follow the [Cloud Adoption Framework]
 (./cloud-adoption-framework-ai-summary.md) roadmap.
-5. **Develop Skills**: Leverage [Microsoft AI CoE]
+1. **Develop Skills**: Leverage [Microsoft AI CoE]
 (./microsoft-ai-center-of-excellence-summary.md) training resources.
 
 ## Key Resources
 
 * [Microsoft Responsible AI]
-(https://www.microsoft.com/en-us/ai/responsible-ai)
+(<https://www.microsoft.com/en-us/ai/responsible-ai>)
 * [Cloud Adoption Framework]
-(https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/)
+(<https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/>)
 * [Power Platform Guidance]
-(https://learn.microsoft.com/en-us/power-platform/guidance/)
+(<https://learn.microsoft.com/en-us/power-platform/guidance/>)
 * [Azure AI Services]
-(https://learn.microsoft.com/en-us/azure/ai-services/)
+(<https://learn.microsoft.com/en-us/azure/ai-services/>)

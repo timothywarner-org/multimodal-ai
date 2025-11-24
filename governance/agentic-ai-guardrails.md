@@ -10,29 +10,29 @@ practical boundaries.
    * Define explicit objectives and success metrics.
    * Regularly validate that AI behavior remains aligned with intended outcomes.
 
-2. **Human Oversight**: Maintain mechanisms for human intervention and control.
+1. **Human Oversight**: Maintain mechanisms for human intervention and control.
    * Implement human-in-the-loop approval for high-impact decisions.
    * Create clear escalation paths for anomalous or uncertain situations.
 
-3. **Ethical Boundaries**: Define and enforce ethical constraints on AI behavior.
+1. **Ethical Boundaries**: Define and enforce ethical constraints on AI behavior.
    * Document prohibited actions and decision criteria.
    * Build ethical rules into the AI's decision-making framework.
 
-4. **Risk Management**: Identify and mitigate potential risks associated with autonomy.
+1. **Risk Management**: Identify and mitigate potential risks associated with autonomy.
    * Conduct threat modeling and scenario analysis.
    * Establish limits on decision scope and financial/operational impact.
 
-5. **Transparency**: Ensure the AI's decision-making processes are explainable.
+1. **Transparency**: Ensure the AI's decision-making processes are explainable.
    * Log all significant decisions with supporting rationale.
    * Provide dashboards for real-time visibility into AI actions.
 
 ## Implementation Steps
 
 1. Define clear objectives and constraints for agentic AI systems.
-2. Use simulation and testing to evaluate AI behavior in various scenarios.
-3. Implement monitoring tools to track AI decisions and actions.
-4. Establish escalation protocols for human intervention.
-5. Regularly review and update guardrails based on feedback and outcomes.
+1. Use simulation and testing to evaluate AI behavior in various scenarios.
+1. Implement monitoring tools to track AI decisions and actions.
+1. Establish escalation protocols for human intervention.
+1. Regularly review and update guardrails based on feedback and outcomes.
 
 ## Autonomy Decision Tree
 
