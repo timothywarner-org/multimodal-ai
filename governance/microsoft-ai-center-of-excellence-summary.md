@@ -6,9 +6,9 @@ implementing AI solutions. This summary highlights its key offerings and benefit
 ## Key Offerings
 
 1. **Training and Certification**: Access to AI training programs and certifications.
-   * Microsoft AI Fundamentals (AZ-900 pathway)
+   * Microsoft AI Fundamentals (AI-900)
    * Responsible AI (MSFT Learn modules)
-   * Azure AI Engineer Associate (AZ-104)
+   * Azure AI Engineer Associate (AI-102)
    * Specialized AI certifications (Computer Vision, Language Understanding)
 
 2. **Best Practices**: Guidelines for designing and deploying AI solutions.

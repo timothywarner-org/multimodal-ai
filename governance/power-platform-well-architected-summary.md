@@ -21,15 +21,15 @@ principles and recommendations.
    * Avoid circular dependencies in model-driven apps.
    * Monitor canvas app performance with app insights.
 
-4. **Cost Optimization**: Manage costs while delivering value.
-   * Use shared connectors instead of premium connectors where possible.
-   * Implement throttling to control API usage.
-   * Archive old data and implement retention policies.
-
-5. **Operational Excellence**: Streamline operations and improve maintainability.
+4. **Operational Excellence**: Streamline operations and improve maintainability.
    * Use managed solutions for version control and lifecycle management.
    * Document configuration and customizations thoroughly.
    * Implement governance policies and naming conventions.
+
+5. **Experience Optimization**: Create seamless, intuitive, and meaningful user experiences.
+   * Design conversational user interfaces and interactions.
+   * Focus on usability and relevance of solutions.
+   * Implement accessibility features for all users.
 
 ## Key Recommendations
 
