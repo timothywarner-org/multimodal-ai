@@ -1,7 +1,7 @@
 # Multimodal AI: How Machines Learn to See, Hear, and Understand Together
 
-[![CI](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/ci.yml)
 [![Lychee Link Checker](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/lychee-link-check.yml/badge.svg)](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/lychee-link-check.yml)
+[![Markdown Linter](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/markdown-linter.yml/badge.svg)](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/markdown-linter.yml)
 
 ## Tim's Contact info
 
