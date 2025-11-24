@@ -1,10 +1,13 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this
+repository.
 
 ## Repository Purpose
 
-This is a **documentation-only repository** for a 45-minute live training session on multimodal generative AI. The target audience is consulting company personnel with varying skill levels. Focus areas include:
+This is a **documentation-only repository** for a 45-minute live training session on multimodal
+generative AI. The target audience is consulting company personnel with varying skill levels. Focus
+areas include:
 
 * M365 Copilot ecosystem (primary focus)
 * Google Gemini Coding Assistant
@@ -78,7 +81,8 @@ When adding new tutorials or documentation:
 
 ## Session Context
 
-This is a **live presentation repository** for a 45-minute session plus 10-minute Q&A. Content should be:
+This is a **live presentation repository** for a 45-minute session plus 10-minute Q&A. Content
+should be:
 
 * Accessible to all skill levels
 * Focused on practical demonstrations and visual examples

@@ -1,8 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx markdownlint-cli2:*)",
-      "Bash(find tutorials -name \"*.md\" -exec sh -c 'echo \"\"File: {}\"\" && wc -l \"\"{}\"\"' ;)"
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []

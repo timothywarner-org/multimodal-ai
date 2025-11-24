@@ -2,7 +2,9 @@
 
 ## Overview
 
-This repository focuses on exploring and demonstrating the capabilities of multimodal AI systems. It includes Markdown documentation, workflows for CI/CD, and link checking. The repository is structured to support presentations and tutorials on multimodal AI concepts.
+This repository focuses on exploring and demonstrating the capabilities of multimodal AI systems. It
+includes Markdown documentation, workflows for CI/CD, and link checking. The repository is
+structured to support presentations and tutorials on multimodal AI concepts.
 
 ## Key Files and Directories
 

@@ -32,7 +32,7 @@ You're a project manager. You need an agent that:
 
 In the **Agent Builder** canvas, find the **System Instructions** panel:
 
-```
+```text
 You are a project management assistant. When users upload project screenshots or images:
 
 1. Analyze the image for action items, tasks, or decisions
@@ -58,12 +58,13 @@ Copy and paste this. Click **Save**.
 1. Click **Test Agent** (bottom right)
 1. In the test panel, upload an image or screenshot (or use this example):
    * Try a screenshot of a spreadsheet, to-do list, or whiteboard photo
-   * Or describe an image: *"I have a screenshot of my sprint board with three columns: To Do, In Progress, Done"*
+   * Or describe an image: *"I have a screenshot of my sprint board with three columns: To Do, In
+     Progress, Done"*
 1. The agent should respond with an extracted checklist
 
 **Example output:**
 
-```
+```text
 📋 Action Items from Sprint Board
 
 1. Finalize API documentation ⭐
@@ -97,22 +98,28 @@ Want to share it with your team?
 
 ## Next Steps
 
-* **Learn more**: Head to [tutorials/m365-agent-tutorial.md](tutorials/m365-agent-tutorial.md) for advanced techniques
-* **Add governance**: Review [governance/responsible-ai.md](governance/responsible-ai.md) before sharing with your org
-* **Troubleshooting**: If the agent doesn't recognize images, see [TROUBLESHOOTING.md](troubleshooting.md) (coming soon)
+* **Learn more**: Head to [tutorials/m365-agent-tutorial.md](tutorials/m365-agent-tutorial.md) for
+  advanced techniques
+* **Add governance**: Review [governance/responsible-ai.md](governance/responsible-ai.md) before
+  sharing with your org
+* **Troubleshooting**: If the agent doesn't recognize images, see
+  [TROUBLESHOOTING.md](troubleshooting.md) (coming soon)
 
 ## Stuck
 
 **Agent returns gibberish**:
+
 * Try clearer instructions: *"Return ONLY a numbered list"*
 * Test with a simpler image first
 
 **Image won't upload**:
+
 * Check file size (<10 MB)
 * Try JPG or PNG format
 * Ensure image has clear text or visuals
 
 **Want to customize more**:
+
 * [View the full M365 Copilot tutorial](tutorials/m365-agent-tutorial.md)
 * [Explore agentic AI guardrails](governance/agentic-ai-guardrails.md)
 

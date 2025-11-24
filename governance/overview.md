@@ -55,7 +55,7 @@ With governance:
 ## Governance Documents Index
 
 | Document | Purpose | Audience |
-|---|---|---|
+| --- | --- | --- |
 | [Guardrails Implementation](guardrails-implementation.md) | Technical safety controls | IT/DevOps |
 | [Proven Practices](proven-practices.md) | Battle-tested patterns | All teams |
 | [Implementation Roadmap](implementation-roadmap.md) | Phased deployment guide | Project managers |
