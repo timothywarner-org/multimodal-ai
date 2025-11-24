@@ -1,65 +1,93 @@
 # Advanced Copilot Studio Agent Tutorial
 
-This tutorial will guide you through creating an advanced agent in Microsoft Copilot Studio. You will
-learn how to integrate external data sources, implement custom actions, and enhance your agent with
-advanced AI capabilities.
+Go beyond basics with Copilot Studio. Build a production-ready agent that mixes grounding,
+Power Platform actions, ALM, and observability, then ship it to Teams and the web.
 
 ## Prerequisites
 
-Before starting, ensure you have the following:
+* Environment with Copilot Studio + Power Platform (prod and a sandbox)
+* Maker permissions in sandbox; deployment pipeline access for prod
+* Access to the data sources you will ground on (SharePoint, Dataverse, Azure SQL)
+* An Application Insights resource for telemetry (optional but recommended)
 
-* Access to Microsoft Copilot Studio.
-* Familiarity with basic agent creation in Copilot Studio.
-* An Azure subscription with access to Cognitive Services.
-* API keys for any external services you plan to integrate.
-* A demo environment for testing your agent.
+## Solution design blueprint
 
-## Step 1: Create a New Advanced Agent
+1. **Persona + guardrails**: Tone, scope, what to avoid
+1. **Knowledge**: SharePoint libraries, Dataverse tables, or websites
+1. **Actions**: Power Automate flows, Dataverse actions, and custom connectors
+1. **Channels**: Teams app, web experience, or custom canvas app
+1. **Observability**: Turn on trace logging to Application Insights
 
-1. Sign in to Microsoft Copilot Studio.
-1. Navigate to the **Create** page and select **New Agent**.
-1. Provide a name and description for your agent that reflects its advanced capabilities.
-1. Use the unified authoring canvas to define your agent's purpose and behavior.
+## Step 1: Author robust system instructions
 
-## Step 2: Add Knowledge Sources
+1. In the unified canvas, open **Instructions** and define:
+   * Role and audience ("You are a benefits concierge for HR")
+   * Boundaries (no legal advice, no payroll updates)
+   * Style (brief, cite sources, ask 1 clarifying question if unsure)
+1. Add **Conversation starters** that mirror top user intents (4-6 entries).
 
-1. Go to the **Knowledge Sources** section in the authoring canvas.
-1. Add external data sources such as SharePoint, public websites, or uploaded files.
-1. Configure the data sources to ensure your agent can access and utilize the information effectively.
-1. Test the integration by querying the agent with questions related to the added knowledge.
+## Step 2: Ground with trusted data
 
-## Step 3: Implement Custom Actions
+1. Add **Data sources** starting with the most authoritative content.
+1. Prioritize SharePoint libraries or Dataverse tables over broad websites.
+1. Turn on **Citations** and test snippets to ensure grounding works.
+1. For sensitive data, apply **Data loss prevention** policies that restrict connectors.
 
-1. Navigate to the **Actions** section in the authoring canvas.
-1. Create custom actions using Power Automate or Azure Logic Apps.
-1. Define the inputs and outputs for each action to ensure seamless integration with your agent.
-1. Test the actions by triggering them through the agent's interface.
+## Step 3: Wire actions with Power Automate
 
-## Step 4: Enhance with AI Capabilities
+1. Create a flow using the **Copilot action** trigger.
+1. Define clear inputs (subject, urgency, description) and outputs (ticketId, status, url).
+1. Return a compact JSON payload so the agent can summarize results.
+1. In Copilot Studio **Actions**, import the flow, map parameters, and describe when to use it.
+1. Test in the canvas to verify tool calls and error handling paths.
 
-1. Integrate Azure Cognitive Services to add advanced AI features such as language understanding,
-sentiment analysis, or image recognition.
-1. Use the **AI Models** section in Copilot Studio to configure the integration.
-1. Train the AI models with relevant data to improve accuracy and performance.
-1. Test the AI capabilities by interacting with the agent and evaluating its responses.
+## Step 4: Add a custom connector (optional)
 
-## Step 5: Test and Refine Your Agent
+1. Build a connector for your REST API; enforce OAuth or API key auth.
+1. Mark actions as **Connector actions** in the agent so the model knows how to call them.
+1. Provide example prompts inside the connector definition for better grounding.
 
-1. Open the **Test Agent** pane in Copilot Studio.
-1. Interact with your agent using various scenarios to ensure it behaves as expected.
-1. Refine the agent's responses, actions, and knowledge sources based on test results.
-1. Use the analytics tools in Copilot Studio to monitor the agent's performance and identify areas for
-improvement.
+## Step 5: Use variables and memory intentionally
 
-## Step 6: Publish and Deploy Your Agent
+* Use **Conversation memory** for short-term context; reset on sensitive flows.
+* Store durable state in Dataverse tables rather than long-term memory.
+* Pass outputs from one action into another via variables instead of re-asking the user.
 
-1. Navigate to the **Publish** section in Copilot Studio.
-1. Select **Publish to Production** to make your agent available to end users.
-1. Configure the deployment settings, including access permissions and usage limits.
-1. Share the deployment link with stakeholders and gather feedback.
+## Step 6: Apply evaluation and safety
 
-## Summary
+1. Create **Test cases** for the top 10 user tasks (happy path + boundary cases).
+1. Use **Prompt testing** to check citation quality and refusal behavior.
+1. Enable **Content moderation** and **PII detection**; add disclaimers when PII is present.
 
-Congratulations! You have successfully created and deployed an advanced agent in Microsoft Copilot
-Studio. Your agent is now equipped with external data integrations, custom actions, and advanced AI
-capabilities. Continue exploring additional features to further enhance your agent's functionality.
+## Step 7: Package and move with ALM
+
+1. Add the agent and flows to a **Solution** in the sandbox environment.
+1. Use **Deployment pipelines** to promote to test and prod with approvals.
+1. Version your system instructions and keep change logs in the solution notes.
+
+## Step 8: Instrument and observe
+
+1. Turn on **Monitor** to capture transcript-level diagnostics in the maker portal.
+1. Connect to **Application Insights** for queryable telemetry (latency, tool errors, refusals).
+1. Define alerts for failure spikes and high refusal rates.
+
+## Step 9: Publish to channels
+
+1. Ship to **Teams** with a clear app name, icon, and short description.
+1. Add **Web experience** if you need anonymous or external user access.
+1. Provide a one-page quick start with best prompts and privacy notice.
+
+## Operational checklist
+
+* Instructions state scope, tone, and refusal rules
+* Grounding uses authoritative sources with citations on
+* Actions return structured outputs and handle errors gracefully
+* DLP policies applied; no risky connectors in production
+* Telemetry enabled with alerts for failures and refusals
+* Deployed via solutions/pipelines, not ad-hoc
+
+## Next steps
+
+* Add regression suites that run before each publish
+* Introduce A/B tests for alternative prompts or action ordering
+* Pair with **Microsoft Purview** for richer data governance across sources
