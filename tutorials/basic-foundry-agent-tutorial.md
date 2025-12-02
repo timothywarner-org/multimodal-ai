@@ -1,61 +1,67 @@
 # Basic Foundry Agent Tutorial
 
-Get a working conversational agent into users' hands with Azure AI Foundry. You will stand up a
-project, add grounded knowledge, connect a simple tool, and publish an endpoint you can call from
-Teams, Power Platform, or any HTTP client.
+Get a working conversational agent into users' hands with Microsoft Foundry. You will stand up
+a project, add grounded knowledge, connect a simple tool, and publish an endpoint you can call
+from Teams, Power Platform, or any HTTP client.
 
 ## Prerequisites
 
-* Azure subscription with Azure AI Foundry enabled and billing set
-* Role: **Contributor** on the target hub and project
-* Model access approved (e.g., GPT-4o, GPT-4o mini) and a deployment quota available
-* One knowledge source to ground on (SharePoint library, website, or set of PDFs)
-* Optional: a REST API you can expose as a tool (sample included below)
+* Azure subscription with Microsoft Foundry access and billing configured
+* Role: **Contributor** on the target project
+* Model access approved (GPT-4o, GPT-4o mini) with deployment quota
+* One knowledge source to ground on (SharePoint library, website, or PDF set)
+* Optional: REST API or Azure Function to expose as a tool
 
 ## Architecture at a glance
 
-1. **Hub + Project**: Workspace that holds your model deployments, indexes, and evaluations
-1. **Connections**: Links to storage and data sources
-1. **Index**: Searchable store for your documents to ground the model
+1. **Project**: Workspace that holds model deployments, knowledge bases, and agents
+1. **Connections**: Links to Azure AI Search, storage, and data sources
+1. **Knowledge Base (Foundry IQ)**: Searchable store powered by Azure AI Search for grounding
 1. **Agent**: System prompt + tools + grounding rules exposed via chat endpoint
-1. **Channels**: Call from Teams, Power Apps, or a custom app via HTTPS
+1. **Channels**: Callable from Teams, Power Apps, or custom apps via HTTPS
 
-## Step 1: Create a hub and project
+## Step 1: Create a project
 
-1. Sign in to Azure AI Foundry and select **Create hub**.
-1. Choose region close to your data; enable managed identity.
-1. After the hub is ready, create a **Project** inside it (this scopes data and deployments).
+1. Sign in to [Microsoft Foundry](https://ai.azure.com) and select **Create an agent**.
+1. Enter a project name; an account and project are created automatically.
+1. Wait for provisioning to complete; you'll land in the agent playground.
+
+> **Note**: This fast path creates a Foundry project. For hub-based projects with advanced
+> features like prompt flow or managed compute, use **Create hub** instead.
 
 ## Step 2: Deploy a model
 
-1. Open **Models + endpoints** > **Deploy model**.
-1. Pick **GPT-4o mini** for fast iteration (switch to **GPT-4o** later for higher quality).
-1. Accept default deployment name (for example, `gpt-4o-mini`) and finish.
+1. Open **Models + endpoints** > **Deploy model** (or use the model catalog).
+1. Select **gpt-4o-mini** for fast iteration (upgrade to **gpt-4o** later for quality).
+1. Accept the default deployment name (e.g., `gpt-4o-mini`) and complete deployment.
 
 ## Step 3: Add grounded knowledge
 
-1. Go to **Data** > **Add index**.
-1. Select **Files** and upload a small starter set (5-20 docs) that represent your domain.
-1. Choose **Chunk + embed** to vectorize content; keep defaults for chunk size and overlap.
-1. When indexing completes, note the **Index ID** (you will bind it to the agent).
+1. Navigate to **Data** > **Create knowledge source**.
+1. Choose **Upload files** and add a starter set (5-20 documents) for your domain.
+1. Configure **Chunk + embed** settings; keep defaults for chunk size (512) and overlap (50).
+1. When indexing completes, note the **Knowledge Base ID** (you'll link it to the agent).
+
+> **Tip**: Knowledge sources use Azure AI Search indexes. You can also connect existing
+> search indexes or web sources via Foundry IQ.
 
 ## Step 4: Create the agent
 
-1. Navigate to **Agents** > **Create agent**.
-1. Name it after a task, e.g., **Project Q&A Copilot**.
-1. In **System prompt**, set tone and boundaries:
+1. In **Agents** > **Create agent**, name it after a task (e.g., **Project Q&A Copilot**).
+1. In **System prompt**, define tone and boundaries:
 
    ```text
-   You are a concise assistant for project stakeholders. Use the indexed content first.
+   You are a concise assistant for project stakeholders. Use indexed content first.
    If unsure, say so and ask a clarifying question. Cite document titles when possible.
    ```
 
-1. Under **Grounding**, select your index and enable **Citations**.
+1. Under **Grounding**, select your knowledge base and enable **Citations**.
 1. Choose your deployed model (e.g., `gpt-4o-mini`).
 
-## Step 5: Add a simple tool (optional but recommended)
+## Step 5: Add a tool (optional but recommended)
 
-Expose a small REST API as a tool so the agent can take action. Example schema:
+Expose a REST API or Azure Function as a tool so the agent can take action. Example OpenAPI
+schema for a support ticket function:
 
 ```json
 {
@@ -72,21 +78,24 @@ Expose a small REST API as a tool so the agent can take action. Example schema:
 }
 ```
 
-1. In **Tools**, choose **HTTPS endpoint** and paste your API URL and JSON schema.
-1. Provide an API key header if needed and test the connection.
+1. In **Tools**, add **OpenAPI Spec** or **Azure Functions** and paste your API URL and schema.
+1. Provide API key header if needed and test the connection.
+
+> **Important**: Function calling is NOT supported in the portal playground. Test tools via
+> SDK or API calls to the deployed agent endpoint.
 
 ## Step 6: Test the agent
 
-1. Open **Playground** and start with a starter prompt (for example, "Summarize the Release A
-   timeline").
-1. Verify citations appear; click them to confirm the source.
-1. Ask the agent to call your tool ("Log a ticket to track printer outage, priority high").
-1. Adjust the system prompt if responses are too long or off-topic.
+1. Open **Agent Playground** and try a starter prompt (e.g., "Summarize the Release A timeline").
+1. Verify citations appear and link to correct sources.
+1. Adjust the system prompt if responses are too verbose or off-topic.
+
+> **Note**: To test function calling, deploy the agent and call it via SDK or REST API.
 
 ## Step 7: Publish and consume
 
-1. Select **Deploy** to create a managed endpoint.
-1. Copy the **Endpoint URL** and **Key** to use from your app.
+1. Select **Deploy** to create a managed endpoint for your Foundry project.
+1. Copy the **Endpoint URL** and **API Key** to use from your application.
 1. Quick test via `curl`:
 
    ```bash
@@ -96,17 +105,20 @@ Expose a small REST API as a tool so the agent can take action. Example schema:
      -d '{"messages":[{"role":"user","content":"Give me the release summary"}]}'
    ```
 
-1. Wire the endpoint into Power Apps, Power Automate, or a Teams message extension.
+1. Integrate the endpoint into Power Apps, Power Automate, or Teams message extensions.
+
+> **API Version**: Use `2025-05-01` (GA) or `2025-05-15-preview` for the latest features.
 
 ## Success criteria checklist
 
-* Agent answers from your indexed content with citations
-* Tool calls succeed and return structured results
-* Latency for common questions < 5 seconds on `gpt-4o-mini`
-* No hallucinated answers when content is missing; agent asks clarifying questions
+* Agent answers from indexed content with accurate citations
+* Tool calls succeed and return structured results (test via API, not portal playground)
+* Latency for common queries < 5 seconds on `gpt-4o-mini`
+* Agent asks clarifying questions when content is missing (no hallucinations)
 
 ## Next steps
 
-* Add more sources (OneLake, SharePoint, websites) and re-index on a schedule
-* Switch to **GPT-4o** for higher quality once prompts and data are stable
-* Add evaluations in **Safety + Quality** to catch regressions before shipping
+* Add more knowledge sources (OneLake, SharePoint, web) and refresh indexes on a schedule
+* Upgrade to **GPT-4o** for higher quality once prompts and data are validated
+* Add evaluations in **Tracing + evals** to catch regressions before production
+* Explore advanced tools: Browser Automation, Azure Logic Apps, MCP endpoints

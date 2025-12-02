@@ -89,6 +89,17 @@ The M365 Copilot chat interface serves as the primary interaction point:
 
 ## Part 2: Creating Your First Declarative Agent
 
+### Agent Creation Methods
+
+Microsoft 365 Copilot offers multiple ways to create declarative agents:
+
+* **Agent Builder in Chat**: Create agents directly from Microsoft 365 Copilot chat using natural
+  language or manual configuration (available as of 2024)
+* **Microsoft 365 Agents Toolkit**: Use Visual Studio Code with TypeScript/TypeSpec for developers
+* **Manual manifest creation**: Define JSON configuration files for advanced customization
+
+This tutorial focuses on the declarative manifest approach, which works across all creation methods.
+
 ### Step 1: Define Agent Purpose and Scope
 
 Before building, clearly define:
@@ -105,30 +116,59 @@ issues using internal knowledge base articles and support documentation.
 
 ### Step 2: Create the Agent Manifest
 
-Declarative agents use a manifest file defining behavior and capabilities:
+Declarative agents use a manifest file defining behavior and capabilities. The current schema
+version is 1.5 (as of December 2024), which includes additional capabilities like Meetings,
+GraphicArt, CodeInterpreter, and more. This example uses version 1.0 for simplicity, but you can
+use newer versions to access advanced features.
 
 ```json
 {
-  "schema_version": "1.0",
+  "version": "v1.0",
   "name": "IT Support Assistant",
   "description": "Helps resolve common IT issues using company knowledge base",
-  "instructions": "You are an IT support assistant for the organization. Help users
-  troubleshoot common technical issues using the knowledge base. Always be polite,
-  clear, and provide step-by-step guidance. If you cannot resolve an issue, guide
-  users to submit a support ticket with relevant details.",
-  "capabilities": {
-    "web_search": false,
-    "graph_connectors": ["sharepoint"],
-    "file_access": true
-  },
+  "instructions": "You are an IT support assistant for the organization. Help users troubleshoot common technical issues using the knowledge base. Always be polite, clear, and provide step-by-step guidance. If you cannot resolve an issue, guide users to submit a support ticket with relevant details.",
+  "capabilities": [
+    {
+      "name": "OneDriveAndSharePoint",
+      "items_by_url": [
+        {
+          "url": "https://yourorg.sharepoint.com/sites/IT-Support"
+        }
+      ]
+    }
+  ],
   "conversation_starters": [
-    "I can't connect to the VPN",
-    "How do I reset my password?",
-    "My email isn't syncing",
-    "I need help with printer setup"
+    {
+      "text": "I can't connect to the VPN"
+    },
+    {
+      "text": "How do I reset my password?"
+    },
+    {
+      "text": "My email isn't syncing"
+    },
+    {
+      "text": "I need help with printer setup"
+    }
   ]
 }
 ```
+
+#### Available Capabilities (Schema 1.5)
+
+The latest schema version (1.5) supports these capabilities in the `capabilities` array:
+
+* **OneDriveAndSharePoint**: Access files and sites (shown in example above)
+* **WebSearch**: Enable web search with optional site restrictions
+* **GraphConnectors**: Connect to Microsoft Graph connectors for external data
+* **GraphicArt**: Generate images and art based on text input
+* **CodeInterpreter**: Generate and execute Python code for data analysis
+* **Dataverse**: Access Power Platform Dataverse tables
+* **TeamsMessages**: Search Teams messages
+* **Email**: Search email with optional shared mailbox access
+* **People**: Search for people in the organization
+* **Meetings**: Search meetings in the organization
+* **ScenarioModels**: Use task-specific AI models
 
 ### Step 3: Configure Knowledge Sources
 
@@ -253,22 +293,22 @@ Agent: [Provides iOS-specific first-time setup instructions]
 
 #### Follow-up Suggestions
 
-Implement contextual next steps:
+Implement contextual next steps using conversation starters:
 
 ```json
 {
-  "follow_up_actions": [
+  "conversation_starters": [
     {
-      "label": "Test my connection",
-      "prompt": "Walk me through testing my email connection"
+      "title": "Test my connection",
+      "text": "Walk me through testing my email connection"
     },
     {
-      "label": "Set up calendar sync",
-      "prompt": "How do I sync my calendar on this device?"
+      "title": "Set up calendar sync",
+      "text": "How do I sync my calendar on this device?"
     },
     {
-      "label": "Troubleshoot issues",
-      "prompt": "My email setup isn't working correctly"
+      "title": "Troubleshoot issues",
+      "text": "My email setup isn't working correctly"
     }
   ]
 }
@@ -283,25 +323,22 @@ Extend agents beyond information retrieval:
 1. Create a Power Automate flow triggered by "When Copilot action is invoked"
 1. Define input parameters (e.g., ticket subject, priority, description)
 1. Add your workflow logic (create ticket, send notifications, update databases)
-1. Publish flow and note the action ID
-1. Add action to agent manifest:
+1. Publish flow and create an API plugin manifest describing the action
+1. Add action reference to agent manifest:
 
 ```json
 {
   "actions": [
     {
       "id": "create-support-ticket",
-      "name": "Create Support Ticket",
-      "description": "Creates a new IT support ticket in the system",
-      "parameters": {
-        "subject": "string",
-        "priority": "low|medium|high|critical",
-        "description": "string"
-      }
+      "file": "create-ticket-plugin.json"
     }
   ]
 }
 ```
+
+Note: The detailed parameters and descriptions are defined in the plugin manifest file, which
+follows the OpenAPI specification format.
 
 #### Graph API Connectors
 
@@ -389,14 +426,21 @@ Configure who can discover and use agents:
 
 #### Data Access Permissions
 
-Agents inherit user permissions by default:
+Agents respect Microsoft Entra ID (formerly Azure AD) permissions and Microsoft Purview policies:
 
-* **User context**: Agent accesses only what user can access (recommended)
-* **Service account**: Agent uses dedicated account permissions (advanced scenarios)
-* **Delegated permissions**: Explicit grant for specific resources
+* **User context (default)**: Agent accesses only what the user can access, using the same
+  underlying controls as other Microsoft 365 services
+* **Managed identity**: For autonomous scenarios, agents can run under a managed identity or
+  service principal
+* **Role-based access control (RBAC)**: Administrators can restrict agent creation and usage
+  through the Copilot Control System
 
-> **Security Note**: Always use the principle of least privilege. Grant only the minimum
-> permissions necessary for agent functionality.
+When you share an agent, users might not have access to all underlying knowledge sources. The
+agent automatically respects each user's permissions, so if a user doesn't have access to a
+knowledge source, the agent won't include that content in responses.
+
+> **Security Note**: Always use the principle of least privilege. Microsoft 365 Copilot only
+> surfaces organizational data to which individual users have at least view permissions.
 
 ### Content Filtering and Safety
 
@@ -409,18 +453,15 @@ Agents inherit user permissions by default:
 
 #### Custom Policies
 
-Implement organizational guardrails:
+Implement organizational guardrails through your agent instructions and Microsoft Purview:
 
-```json
-{
-  "safety_settings": {
-    "blocked_topics": ["executive compensation", "merger plans", "layoff information"],
-    "required_disclaimers": "Responses are AI-generated. Verify critical information.",
-    "escalation_triggers": ["legal", "HR policy", "data breach"],
-    "audit_logging": "all_conversations"
-  }
-}
-```
+* **Instructions-based boundaries**: Define blocked topics directly in agent instructions
+  * Example: "Do not discuss executive compensation, merger plans, or layoff information"
+* **Required disclaimers**: Add disclaimers using the optional `disclaimer` property in the manifest
+* **Microsoft Purview policies**: Use Data Loss Prevention and Insider Risk Management to detect
+  and prevent sensitive data exposure
+* **Audit logging**: All agent conversations are automatically logged in the Microsoft 365
+  compliance center for eDiscovery
 
 ### Compliance and Auditing
 
@@ -803,10 +844,21 @@ interaction. Key takeaways:
 
 ## Additional Resources
 
-* M365 Copilot adoption framework and resources
-* Prompt engineering guides and best practices
+### Official Microsoft Documentation
+
+* [Declarative Agents Overview](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-declarative-agent) - Microsoft Learn
+* [Declarative Agent Schema 1.5](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.5) - Latest schema reference
+* [Agent Builder in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-lite) - Create agents from chat
+* [Add Knowledge Sources](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/knowledge-sources) - SharePoint, OneDrive configuration
+* [Write Effective Instructions](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-instructions) - Prompt engineering guide
+* [Security and Governance](https://learn.microsoft.com/en-us/copilot/microsoft-365/copilot-control-system/security-governance) - Copilot Control System
+* [Agent Flows Overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview) - Power Automate integration
+
+### Related Topics
+
+* M365 Copilot adoption framework and organizational change management
 * SharePoint content organization for AI optimization
-* Security and compliance guidance for AI workloads
+* Microsoft Purview policies for AI workloads
 * Community samples and templates repository
 
 ---
