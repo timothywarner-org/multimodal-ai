@@ -3,7 +3,7 @@
 Comprehensive resource guide for building, deploying, and governing multimodal AI solutions across
 M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 
-**Last updated**: November 24, 2025
+**Last updated**: December 2, 2025
 
 ## Quick Start Guides
 
@@ -19,14 +19,14 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 * [GitHub Copilot Quickstart](https://docs.github.com/en/copilot/quickstart)
 * [Using GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview)
 * [GitHub Copilot for Business Setup](https://docs.github.com/en/copilot/setting-up-github-copilot)
-* [GitHub Copilot Chat Documentation](https://docs.github.com/en/copilot/github-copilot-chat)
+* [GitHub Copilot Chat Documentation](https://docs.github.com/en/copilot/how-tos/chat-with-copilot)
 
 ### Azure AI Foundry
 
-* [Azure AI Foundry Quick Start](https://learn.microsoft.com/en-us/azure/ai-studio/quickstarts/)
-* [Build Your First Agent](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/build-agent)
+* [Azure AI Foundry Quick Start](https://learn.microsoft.com/en-us/azure/ai-foundry/quickstarts/get-started-code)
+* [Build Your First Agent](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/quickstart)
 * [Azure OpenAI Service Getting Started](https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart)
-* [Prompt Flow Quickstart](https://learn.microsoft.com/en-us/azure/ai-studio/quickstarts/prompt-flow)
+* [Prompt Flow Documentation](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html)
 
 ### Google Gemini
 
@@ -81,8 +81,8 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 ### GitHub
 
 * [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
-* [GitHub Copilot for Business](https://docs.github.com/en/copilot/github-copilot-for-business)
-* [GitHub Copilot Extensions](https://docs.github.com/en/copilot/building-copilot-extensions)
+* [GitHub Copilot Plans](https://docs.github.com/en/copilot/get-started/plans)
+* [GitHub Copilot Extensions](https://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions)
 * [GitHub Models Catalog](https://github.com/marketplace/models)
 
 ## Governance & Responsible AI
@@ -137,7 +137,7 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 * [Claude Safety Best Practices](https://docs.anthropic.com/en/docs/safety-best-practices)
 * [Anthropic Responsible Scaling Policy](https://www.anthropic.com/index/anthropics-responsible-scaling-policy)
 * [AI Safety Research](https://www.anthropic.com/research)
-* [Red Teaming Language Models](https://www.anthropic.com/index/red-teaming-language-models)
+* [Red Teaming Language Models](https://www.anthropic.com/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned)
 
 ### Cross-Platform Governance Resources
 
@@ -152,7 +152,7 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 #### Industry Guidelines
 
 * [Partnership on AI Best Practices](https://partnershiponai.org/practices/)
-* [World Economic Forum AI Governance](https://www.weforum.org/projects/ai-governance-alliance/)
+* [World Economic Forum AI Governance](https://initiatives.weforum.org/ai-governance-alliance/home)
 * [AI Ethics Guidelines Global Inventory](https://algorithmwatch.org/en/ai-ethics-guidelines-global-inventory/)
 * [Stanford HAI AI Index](https://aiindex.stanford.edu/)
 
@@ -177,7 +177,7 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 
 ### Anthropic Security
 
-* [Anthropic Security Practices](https://www.anthropic.com/index/security)
+* [Anthropic Security Practices](https://www.anthropic.com/transparency/platform-security)
 * [Claude API Security](https://docs.anthropic.com/en/api/security)
 * [Data Privacy with Claude](https://support.anthropic.com/en/articles/8114521-how-does-anthropic-handle-privacy)
 
@@ -328,7 +328,7 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 
 ### Business & Productivity
 
-* [M365 Copilot Use Cases](https://support.microsoft.com/en-us/topic/copilot-use-cases)
+* [M365 Copilot Scenarios](https://adoption.microsoft.com/en-us/copilot-scenario-library/)
 * [Customer Service Automation](https://learn.microsoft.com/en-us/dynamics365/customer-service/use/copilot-overview)
 * [Sales Productivity with Copilot](https://learn.microsoft.com/en-us/dynamics365/sales/copilot-overview)
 * [Document Intelligence Scenarios](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/)
@@ -336,8 +336,8 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 ### Software Development
 
 * [GitHub Copilot Case Studies](https://github.com/features/copilot/case-studies)
-* [Code Review Automation](https://docs.github.com/en/copilot/using-github-copilot/code-review-with-copilot)
-* [DevOps with AI](https://learn.microsoft.com/en-us/azure/devops/integrate/concepts/ai-integration)
+* [Code Review Automation](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review)
+* [Azure DevOps AI Integration](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview)
 
 ### Data & Analytics
 
@@ -468,6 +468,64 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 * [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 * [AI Fairness and Bias Mitigation](https://learn.microsoft.com/en-us/azure/machine-learning/concept-fairness-ml)
 
+## Enterprise Consulting Resources
+
+### AI Strategy & Roadmapping
+
+* [Microsoft AI Transformation Framework](https://www.microsoft.com/en-us/ai/ai-business-school)
+* [Gartner AI Strategy Resources](https://www.gartner.com/en/topics/artificial-intelligence)
+* [McKinsey State of AI Report](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai)
+* [Deloitte AI Institute](https://www2.deloitte.com/us/en/pages/deloitte-analytics/articles/advancing-human-ai-collaboration.html)
+* [Forrester AI & Automation Research](https://www.forrester.com/research/artificial-intelligence/)
+
+### Enterprise Adoption & Change Management
+
+* [M365 Copilot Adoption Hub](https://adoption.microsoft.com/copilot/)
+* [Microsoft Copilot Success Kit](https://adoption.microsoft.com/copilot/success-kit/)
+* [AI Readiness Blog](https://www.microsoft.com/en-us/microsoft-cloud/blog/2024/11/06/a-strategic-approach-to-assessing-your-ai-readiness/)
+* [AI Center of Excellence Framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/ai/)
+* [Prosci ADKAR Model for AI](https://www.prosci.com/resources/articles/change-management-for-ai-adoption)
+
+### ROI & Business Case Development
+
+* [Microsoft Copilot Value Calculator](https://adoption.microsoft.com/copilot/roi/)
+* [Total Economic Impact of GitHub Copilot](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-code-quality/)
+* [IDC AI Business Value Studies](https://www.idc.com/research/artificial-intelligence)
+* [Harvard Business Review AI ROI](https://hbr.org/topic/subject/artificial-intelligence)
+* [MIT Sloan AI & Business Strategy](https://sloanreview.mit.edu/big-ideas/artificial-intelligence-business-strategy/)
+
+### Enterprise Architecture & Integration
+
+* [Azure AI Reference Architecture](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/)
+* [Well-Architected Framework for AI](https://learn.microsoft.com/en-us/azure/well-architected/ai/)
+* [Enterprise Integration Patterns for AI](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/baseline-openai-e2e-chat)
+* [API Management for AI Services](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts)
+* [AI Gateway Patterns](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/azure-openai-gateway-guide)
+
+### Enterprise Licensing & Procurement
+
+* [Microsoft 365 Copilot Licensing Guide](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-licensing)
+* [GitHub Copilot Enterprise Plans](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot)
+* [Azure AI Services Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/)
+* [Google Cloud AI Pricing](https://cloud.google.com/vertex-ai/pricing)
+* [Anthropic Enterprise Plans](https://www.anthropic.com/enterprise)
+
+### Industry-Specific AI Solutions
+
+* [Microsoft Industry Solutions Hub](https://learn.microsoft.com/en-us/industry/)
+* [Microsoft for Healthcare](https://learn.microsoft.com/en-us/industry/healthcare/)
+* [Microsoft for Manufacturing](https://learn.microsoft.com/en-us/industry/manufacturing/)
+* [Microsoft for Financial Services](https://learn.microsoft.com/en-us/industry/financial-services/)
+* [Google Cloud Industry AI Solutions](https://cloud.google.com/solutions/ai)
+
+### Consulting Frameworks & Methodologies
+
+* [Microsoft Cloud Adoption Framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/)
+* [Azure Landing Zones for AI](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/)
+* [AI Readiness Assessment Tool](https://info.microsoft.com/ww-landing-ai-maturity-model-website.html)
+* [Responsible AI Maturity Model](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai)
+* [Data & AI Discovery Workshop Guide](https://partner.microsoft.com/en-us/asset/collection/data-ai-sales-resources)
+
 ## Additional Resources
 
 ### Podcasts
@@ -499,5 +557,5 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 
 Found a broken link or have a resource to add? Please submit an issue or pull request.
 
-**Verification status**: Links verified as of November 24, 2025. Some resources may require
+**Verification status**: Links verified as of December 2, 2025. Some resources may require
 organizational access or subscriptions.
