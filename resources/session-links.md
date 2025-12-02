@@ -4,7 +4,7 @@
 
 * [Microsoft 365 Copilot Overview](https://www.microsoft.com/en-us/microsoft-365/copilot)
 
-* [Microsoft Learn: AI and Machine Learning](https://learn.microsoft.com/en-us/training/paths/ai-machine-learning/)
+* [Microsoft Learn: AI Learning Hub](https://learn.microsoft.com/en-us/ai/)
 
 * [Azure AI Services](https://azure.microsoft.com/en-us/products/ai/)
 
@@ -14,19 +14,19 @@
 
 ## Google Ecosystem
 
-* [Google Gemini AI](https://blog.google/technology/ai/google-gemini/)
+* [Google Gemini AI](https://blog.google/technology/ai/google-gemini-ai/)
 
 * [Google Cloud AI and Machine Learning](https://cloud.google.com/products/ai)
 
 * [Vertex AI](https://cloud.google.com/vertex-ai)
 
-* [Google Workspace AI Features](https://workspace.google.com/intl/en/features/ai/)
+* [Google Workspace AI Features](https://workspace.google.com/features/)
 
 ## Claude and Claude Code
 
-* [Claude AI Overview](https://www.anthropic.com/index/claude)
+* [Claude AI Overview](https://www.anthropic.com/claude)
 
-* [Claude for Developers](https://www.anthropic.com/index/claude-for-developers)
+* [Claude for Developers](https://www.anthropic.com/api)
 
 ## General Multimodal AI Resources
 
@@ -54,7 +54,7 @@
 
 * [Google AI APIs](https://cloud.google.com/ai/apis)
 
-* [Anthropic API](https://www.anthropic.com/index/api)
+* [Anthropic API](https://www.anthropic.com/api)
 
 ## Community and Support
 
@@ -68,5 +68,5 @@
 
 ### Notes
 
-* All links have been verified as of November 24, 2025.
+* All links have been verified as of December 2, 2025.
 * For any issues accessing these resources, please contact the session organizer.
