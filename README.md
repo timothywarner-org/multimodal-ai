@@ -1,5 +1,6 @@
 # Multimodal AI: How Machines Learn to See, Hear, and Understand Together
 
+[![YouTube](https://img.shields.io/badge/YouTube-Watch%20Video-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=3jZ_lzsgWTM)
 [![Lychee Link Checker](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/lychee-link-check.yml/badge.svg)](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/lychee-link-check.yml)
 [![Markdown Linter](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/markdown-linter.yml/badge.svg)](https://github.com/timothywarner-org/multimodal-ai/actions/workflows/markdown-linter.yml)
 
