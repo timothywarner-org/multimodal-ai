@@ -374,6 +374,7 @@ M365 Copilot, Azure AI, Google Gemini, GitHub Copilot, and Claude ecosystems.
 
 ### Newsletters
 
+* [AI Weekly](https://aiweekly.co/) — models, agents, and research ranked from what AI experts read and share
 * [The Batch by DeepLearning.AI](https://www.deeplearning.ai/the-batch/)
 * [ImportAI by Jack Clark](https://jack-clark.net/)
 * [The AI Report (Microsoft)](https://news.microsoft.com/ai/)
